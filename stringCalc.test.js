@@ -1,8 +1,9 @@
 'use strict';
 //import stringCalc from 'stringCalc.js';
 
-const stringCalc = require('./stringCalc');
+const stringCalculator = require('./stringCalc');
 //const stringCalc = require("./stringCalc");
+console.log('looking for the test ', Object.getOwnPropertyNames(stringCalculator));
 
 //test to add two numbers 
 test('Sum of 1,2 is 3', () => {
