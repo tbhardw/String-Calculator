@@ -1,7 +1,7 @@
 'use strict';
 //import stringCalc from 'stringCalc.js';
 
-const stringCalculator = require('./stringCalc');
+const stringCalc = require('./stringCalc');
 //const stringCalc = require("./stringCalc");
 console.log('looking for the test ', Object.getOwnPropertyNames(stringCalculator));
 
