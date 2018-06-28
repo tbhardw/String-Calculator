@@ -19,7 +19,7 @@ test('To test the sum of two numbers separated by new line characters', () => {
 
 //Test 4: test for negative numbers 
 test('To Test the sum when the input is a negative number', () => {
-    expect(function(){stringCalc('-1')}).toThrow('negative numbers are not allowed');
+    expect(function(){stringCalc('-1')}).toThrow('negatives not allowed -1');
 });
 
 //Test 5: test to add multiple numbers
@@ -33,11 +33,11 @@ test('To Test the sum of numbers separated by multiple delimiters', () => {
 });
 
 //Test 7: test for all negative number inputs
-test('To Test the sum when all the inputs are negative numbers', () => {
-    expect(function(){stringCalc('-1,-2')}).toThrow('negative numbers are not allowed');
+test('To Test the sum when the inputs are both positive and negative numbers', () => {
+    expect(function(){stringCalc('-1,-2,3')}).toThrow('negatives not allowed -1,-2');
 });
 
-//Test 7: test for both positive and negative numbers 
-test('To Test the sum when the inputs are both positive and negative numbers', () => {
-    expect(function(){stringCalc('-1,-2,3;4')}).toThrow('negative numbers are not allowed');
+//Test 8: test for both positive and negative numbers 
+test('To Test the sum when both the inputs are negative numbers', () => {
+    expect(function(){stringCalc('-2,-3')}).toThrow('negatives not allowed -2,-3');
 });
