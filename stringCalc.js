@@ -1,8 +1,8 @@
 function stringCalc(id){
 	let string_numbers = id;
 
-	//replaces the numbers with a comma symbol
-	var numbers = string_numbers.replace(/\n|;|\/|\\/g,",");
+	//replaces the special characters in the numbers with a comma symbol
+	var numbers = string_numbers.replace(/\n|;|\/|\\|[*]/g,",");
 	console.log(numbers);
 	//Splitting by commas 
 	var rem = numbers.split(',');
@@ -16,7 +16,7 @@ function stringCalc(id){
 			neg.push(rem[i])
 		}
 		//to check if an array element is not an empty string
-		else if(rem[i] != ''){
+		else if(rem[i] != '' && rem[i] < 1000){
 			sum = sum + parseInt(rem[i]);
 		}
 	}

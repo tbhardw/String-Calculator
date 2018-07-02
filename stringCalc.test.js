@@ -41,3 +41,28 @@ test('To Test the sum when the inputs are both positive and negative numbers', (
 test('To Test the sum when both the inputs are negative numbers', () => {
     expect(function(){stringCalc('-2,-3')}).toThrow('negatives not allowed -2,-3');
 });
+
+//Test 9: test for the sum of numbers when an input is greater than 1000
+test('To Test the sum when one of the inputs being added is greater than 1000', () => {
+    expect(stringCalc('2,1001')).toBe(2);
+});
+
+//Test 10: test for the sum of numbers when the input is separated by a * delimiter
+test('To Test the sum when the inputs are separated by a * delimiter', () => {
+    expect(stringCalc('//[***]\n1***2***3')).toBe(6);
+});
+
+//Test 11: test for the sum of numbers when multiple inputs are greater than 1000
+test('To Test the sum when two of the inputs being added are greater than 1000', () => {
+    expect(stringCalc('2,1001,2000')).toBe(2);
+});
+
+//Test 12: test for the sum of numbers when multiple numbers being added are less than 1000
+test('To Test the sum when two of the inputs being added are less than 1000 alongwith a number greater than 1000', () => {
+    expect(stringCalc('2,4,2000')).toBe(6);
+});
+
+//Test 13: test for the sum of numbers when multiple numbers added are separated by delimiters and are greater than 1000
+test('To Test the sum when two of the inputs being added are less than 1000 alongwith a number greater than 1000 separated by delimiters', () => {
+    expect(stringCalc('2,4;,3*2000')).toBe(9);
+});
