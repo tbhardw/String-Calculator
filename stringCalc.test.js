@@ -64,5 +64,34 @@ test('To Test the sum when two of the inputs being added are less than 1000 alon
 
 //Test 13: test for the sum of numbers when multiple numbers added are separated by delimiters and are greater than 1000
 test('To Test the sum when two of the inputs being added are less than 1000 alongwith a number greater than 1000 separated by delimiters', () => {
-    expect(stringCalc('2,4;,3*2000')).toBe(9);
+    expect(stringCalc('2,4;,[,3*2000')).toBe(9);
 });
+
+//Test 14: test for the sum of numbers when multiple numbers added are separated by delimiters and are greater than 1000
+test('To Test the sum of different types of delimiters ', () => {
+    expect(stringCalc('//[*][%]\n1*2%3')).toBe(6);
+});
+
+//Test 15: test for the sum of numbers when multiple numbers added are separated by delimiters and are greater than 1000
+test('To Test the sum when the length of delimiters is greater than one character ', () => {
+    expect(stringCalc('//[*][%]\n1*%%%2%3***')).toBe(6);
+});
+
+// test('To Test the sum of two numbers on the console', function() {
+//        console.log = jest.fn();    // mock console.log
+//        stringCalc('1,2');
+//        expect(console.log.mock.calls[0][0]).toBe(3);
+//    });
+//Test 16:
+test('To Test the sum of two numbers by calling the function on the console', function() {
+       console.log = jest.fn();    // mock console.log
+       stringCalc('1,2');
+       expect(console.log.mock.calls[0][0]).toBe('the result is 3');
+   });
+
+//Test 17:
+test('To Test the sum of two numbers by calling the function on the console', function() {
+       console.log = jest.fn();    // mock console.log
+       stringCalc('1,2**4');
+       expect(console.log.mock.calls[0][0]).toBe('the result is 7');
+   });
